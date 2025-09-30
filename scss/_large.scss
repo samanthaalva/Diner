@@ -1,0 +1,28 @@
+header, nav, main {
+    max-width: auto;
+    margin: auto;
+}
+div.allcards {
+    section {
+        flex-basis: calc(33.33% - (($gutter*2)/3));
+        //There are 2 gutters ($gutter*2) and 3 cards in a row. So we divide by 3.
+    }
+}
+/* NAVIGATION STUFF GOES HERE  */
+footer div {
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+#myButton {
+    display: none;
+}
+ul.menuLinks li a {
+    padding: .4rem 1rem;
+}
+ul.menuLinks, ul.menuLinks.open {
+    display: flex;
+    justify-content: flex-end;
+}
+ul.menuLinks a:hover {
+    background-color: rgba(255,255,255,0.2);
+}

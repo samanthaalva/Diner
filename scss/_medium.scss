@@ -1,0 +1,29 @@
+/* NAVIGATION STUFF GOES HERE  */
+nav {
+  ul {
+    display: flex;
+    justify-content: flex-start;
+    column-gap: $gutter;
+  }
+  ul li a {
+    margin: 10px 0;
+  }
+  ul li a:hover {
+    text-decoration: underline 2px white;
+  } // end hover
+} // end nav
+div.allcards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $gutter;
+    section {
+        flex-basis: calc(50% - ($gutter/2));
+        //(-$gutter /2) because there are 2 gaps in a row. This allows for good padding between cards.
+    }
+//Because I referenced "div.allcards" in small, I must do the same thing in every other file. It will break if I don't.
+}
+footer div {
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+}

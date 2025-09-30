@@ -1,0 +1,185 @@
+/* Prevent adjustments of font size after orientation changes in IE on Windows Phone and in iOS.  */
+html {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+/*  Apply a natural box layout model to all elements  */
+* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+} // This section targets all elements.
+
+
+/* --------------------------- BODY --------------------------- */
+body {
+    font-family: $defaultFont;
+    font-weight: $lightWeight;
+    min-width: 320px;
+}
+
+
+/* --------------------------- HEADER --------------------------- */
+#headerWrapper {border-bottom: 1px solid $greyColor;}
+header {
+    display: flex;
+    grid-template-columns: 50px auto;
+    column-gap: $gutter;
+    align-items: center; //vertically
+    padding: .5rem $gutter;
+    span {
+        font-size: 1.6rem;
+        font-weight: bold;
+        color: $hColor;
+    }
+} // End of header
+
+div.allcards {
+    padding: 0 $gutter;
+    color: $fColor;
+    section {
+        border: 2px solid $pColor;
+        overflow: hidden;
+        //Anything outside of the section border radius gets cut off.
+        margin: 2rem 0;
+        background-color: $tColor;
+
+    h2, p, img {
+        margin: 0; //Gets rid of default margin.
+        padding: 1rem $gutter;  
+    }//Dry code by grouping these 3 elements together. We don't want to repeat ourselves.
+
+    h2{
+        background-color: $pColor;
+        font-size: 1.5rem;
+        text-align: center;
+    }
+    img {
+        width: 100%;
+        height: auto;
+        //The code above allows images to scale and keeps them from distorting.
+        display: block;
+    
+    }
+    img.e2e {padding: 0;}
+    p {
+        font-style: italic;
+    }
+    a {
+        display: block;
+        //Anchors are inline by default. Display: block should be the first thing we do.
+        background-color: $sColor;
+        padding: .75rem;
+        text-align: center;
+        margin: 0 3rem 1rem 3rem;
+        color: white;
+        text-decoration: none;
+    }
+} // End of section
+} // End of all cards
+
+
+
+/* --------------------------- NAVIGATION STUFF GOES HERE --------------------------- */
+nav {
+    background-color: $pColor;
+}
+#myButton::before {
+    content: "\2630";
+}
+#myButton {
+    border: none;
+    background: none;
+    color: $fColor;
+    font-size: 2rem;
+    padding: 0;
+    width: 44px;
+    height: 44px;
+    font-weight: $lightWeight;
+    cursor: pointer;
+}
+ul.menuLinks {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: none;
+    li a {
+        color: $fColor;
+        display: block;
+        padding: .75rem $gutter;
+        text-decoration: none;
+    }
+    li.active a {
+        background-color: rgba(255,255,255,0.2);
+    }
+} //End of ul
+ul.open.menuLinks {
+    display: block;
+}
+#myButton.open::before {
+    content: "x";
+}
+
+/* --------------------------- MAIN --------------------------- */
+main {
+    h1 {
+        padding: 1rem $gutter .5rem $gutter;
+        font-size: 1.5rem;
+        color: $fColor;
+        font-weight: $lightWeight
+    }
+    p {
+        padding: .5rem $gutter;
+        color: $fColor;;
+        
+    }
+}//End of main
+
+/* --------------------------- FOOTER --------------------------- */
+#footerWrapper {
+    background-color: $sColor;
+    color: $pColor;
+} //End of footer wrapper
+
+footer {
+    color: white;
+  padding: 0.5rem $gutter;
+  
+
+  section.contact {
+    p{font-size: 1.2rem; margin: .5rem;}
+    ion-icon{color: white; padding-right: 5px;}
+    a {
+        color: white;
+        text-decoration: none;
+    }
+  } //End of contact
+
+  section.social {
+    display: flex;
+    justify-content: center;
+    a {
+        display: block;
+        font-size: 2rem;
+        margin: .5rem;
+        padding: .5rem;
+        color: white;
+        &:hover {
+            background-color: $pColor;
+        }
+    } // a
+
+  } // End of social
+  section.location {
+    font-size: 1.5rem;
+  } // End of location
+
+  p.legal {
+    padding-top: 2rem;
+    justify-content: center;
+    margin: 0;
+    font-weight: $lightWeight;
+    text-align: center;
+  } // legal
+}// End of footer
